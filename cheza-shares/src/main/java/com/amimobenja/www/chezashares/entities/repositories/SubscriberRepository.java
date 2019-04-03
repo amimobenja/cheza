@@ -16,6 +16,6 @@ public interface SubscriberRepository extends JpaRepository<Subscriber, Integer>
     
     public Subscriber findByMsisdnAndPassword(String msisdn, String password);
     
-    public Subscriber findByMsidnAndStatus(String msidn, String status);
+    public Subscriber findByMsisdnAndStatus(String msidn, String status);
     
 }

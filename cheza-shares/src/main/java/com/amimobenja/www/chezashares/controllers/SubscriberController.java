@@ -25,7 +25,7 @@ public class SubscriberController {
         this.subService = subService;
     }
     
-    @PostMapping(value="/subscribe")
+//    @PostMapping(value="/subscribe")
     
     
     

@@ -37,7 +37,7 @@ public class SubscriberImplementor implements SubscriberService {
 
     @Override
     public Subscriber searchSubscriberByMsisdnAndStatus(String msisdn, String status) {
-        return subRepo.findByMsidnAndStatus(msisdn, status);
+        return subRepo.findByMsisdnAndStatus(msisdn, status);
     }
     
 }
