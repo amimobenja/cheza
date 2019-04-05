@@ -35,6 +35,7 @@ public class Subscriber implements Serializable {
     private Date subscriptionDate;
 
     public Subscriber() {
+        this.subscriptionDate = new Date();
     }
 
     public Subscriber(String msisdn, String password) {
