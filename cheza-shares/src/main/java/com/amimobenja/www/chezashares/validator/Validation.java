@@ -8,6 +8,8 @@ package com.amimobenja.www.chezashares.validator;
 import com.amimobenja.www.chezashares.entities.Subscriber;
 import static com.amimobenja.www.chezashares.utils.AppConstants.*;
 import com.amimobenja.www.chezashares.utils.ResponseWrapper;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
@@ -27,7 +29,7 @@ public class Validation {
         
         logger.debug(" - Validation process started.");
 
-        if (subscriber.getMsisdn().isEmpty()) {
+        if (formatMsisdn(subscriber.getMsisdn()).isEmpty()) {
             response.setHttpStatus(HttpStatus.BAD_REQUEST);
             response.setResponseMessage(BAD_PARAMS_RESPONSE_MESSAGE);
             response.setResponseCode(HttpStatus.BAD_REQUEST.value());
@@ -82,6 +84,27 @@ public class Validation {
 
     public void setIsValid(boolean isValid) {
         this.isValid = isValid;
+    }
+    
+    
+    private boolean isValidInput(String inputStr, String expression) {
+        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(inputStr);
+        return matcher.matches();
+    }
+    
+    private String formatMsisdn(String msisdn) {
+        String formatedMsisdn = "";
+        if (isValidInput(msisdn, REGEX_EXPRESSION_I)) {
+            formatedMsisdn = msisdn;
+        } else if (isValidInput(msisdn, REGEX_EXPRESSION_II)) {
+            formatedMsisdn = msisdn.replace("+", "");
+        } else if (isValidInput(msisdn, REGEX_EXPRESSION_III)) {
+            formatedMsisdn = String.valueOf(msisdn.charAt(0)).equals("0") ? msisdn.replaceFirst("0", "254") : msisdn;
+        } else if (isValidInput(msisdn, REGEX_EXPRESSION_IV)) {
+            formatedMsisdn = "254" + msisdn;
+        }
+        return formatedMsisdn;
     }
 
 }
