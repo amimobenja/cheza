@@ -6,6 +6,7 @@
 package com.amimobenja.www.chezashares.configs.security;
 
 import javax.annotation.Resource;
+import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -20,6 +21,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;
+import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
@@ -32,6 +34,9 @@ import org.springframework.web.filter.CorsFilter;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+        
+    @Autowired
+    private DataSource dataSource;
 
     @Resource(name = "userService")
     private UserDetailsService userDetailsService;
@@ -59,7 +64,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public TokenStore tokenStore() {
-        return new InMemoryTokenStore();
+        String insertAccessTokenSql = "insert into oauth_access_token (token_id, token, authentication_id, user_name, client_id, authentication, refresh_token) values (?, ?, ?, ?, ?, ?, ?)";
+        String selectAccessTokensFromUserNameAndClientIdSql = "select token_id, token from oauth_access_token where user_name = ? and client_id = ?";
+        String selectAccessTokensFromUserNameSql = "select token_id, token from oauth_access_token where user_name = ?";
+        String selectAccessTokensFromClientIdSql = "select token_id, token from oauth_access_token where client_id = ?";
+        String insertRefreshTokenSql = "insert into oauth_refresh_token (token_id, token, authentication) values (?, ?, ?)";
+
+        JdbcTokenStore jdbcTokenStore = new JdbcTokenStore(dataSource);
+        jdbcTokenStore.setInsertAccessTokenSql(insertAccessTokenSql);
+        jdbcTokenStore.setSelectAccessTokensFromUserNameAndClientIdSql(selectAccessTokensFromUserNameAndClientIdSql);
+        jdbcTokenStore.setSelectAccessTokensFromUserNameSql(selectAccessTokensFromUserNameSql);
+        jdbcTokenStore.setSelectAccessTokensFromClientIdSql(selectAccessTokensFromClientIdSql);
+        jdbcTokenStore.setInsertRefreshTokenSql(insertRefreshTokenSql);
+
+
+        return jdbcTokenStore;
     }
 
     @Bean
