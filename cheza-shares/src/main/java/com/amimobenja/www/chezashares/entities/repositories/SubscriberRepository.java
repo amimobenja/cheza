@@ -14,6 +14,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface SubscriberRepository extends JpaRepository<Subscriber, Integer> {
     
+    public Subscriber findByMsisdn(String msisdn);
+    
     public Subscriber findByMsisdnAndPassword(String msisdn, String password);
     
     public Subscriber findByMsisdnAndStatus(String msidn, String status);

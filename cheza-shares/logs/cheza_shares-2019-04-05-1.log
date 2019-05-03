@@ -1,0 +1,75 @@
+2019-04-05 08:32:58.986  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] c.a.w.c.ChezaSharesApplication           : Starting ChezaSharesApplication on afro-HP-ProBook-440-G5 with PID 9183 (/media/afro/TKL1/Telkom/Projects/cheza/cheza-shares/target/classes started by afro in /media/afro/TKL1/Telkom/Projects/cheza/cheza-shares)
+2019-04-05 08:32:59.006 DEBUG afro-HP-ProBook-440-G5 --- [  restartedMain] c.a.w.c.ChezaSharesApplication           : Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-04-05 08:32:59.008  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] c.a.w.c.ChezaSharesApplication           : No active profile set, falling back to default profiles: default
+2019-04-05 08:32:59.285  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-04-05 08:32:59.285  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-04-05 08:33:01.822  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-04-05 08:33:02.055  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 176ms. Found 1 repository interfaces.
+2019-04-05 08:33:02.962  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$292159c7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-05 08:33:05.001  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8010 (http)
+2019-04-05 08:33:05.027  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8010"]
+2019-04-05 08:33:05.047  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2019-04-05 08:33:05.048  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-05 08:33:05.066  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.a.c.c.AprLifecycleListener             : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/home/afro/jdk1.8.0_111/jre/lib/amd64:/home/afro/jdk1.8.0_111/jre/lib/i386::/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-04-05 08:33:05.168  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.a.c.c.C.[.[.[/cheza_shares]            : Initializing Spring embedded WebApplicationContext
+2019-04-05 08:33:05.168  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 5882 ms
+2019-04-05 08:33:06.734  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2019-04-05 08:33:08.275  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2019-04-05 08:33:08.888  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-04-05 08:33:09.360  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.h.Version                              : HHH000412: Hibernate Core {5.3.7.Final}
+2019-04-05 08:33:09.364  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.h.c.Environment                        : HHH000206: hibernate.properties not found
+2019-04-05 08:33:10.142  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-04-05 08:33:10.606  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-04-05 08:33:11.073  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2019-04-05 08:33:11.086  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.h.t.BasicTypeRegistry                  : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@4364f121
+2019-04-05 08:33:14.316  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-04-05 08:33:14.357  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-04-05 08:33:16.037  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-05 08:33:16.184  WARN afro-HP-ProBook-440-G5 --- [  restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-04-05 08:33:16.669  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8010"]
+2019-04-05 08:33:16.742  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8010 (http) with context path '/cheza_shares'
+2019-04-05 08:33:16.746  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] c.a.w.c.ChezaSharesApplication           : Started ChezaSharesApplication in 18.755 seconds (JVM running for 21.951)
+2019-04-05 08:36:15.066  INFO afro-HP-ProBook-440-G5 --- [nio-8010-exec-1] o.a.c.c.C.[.[.[/cheza_shares]            : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-05 08:36:15.067  INFO afro-HP-ProBook-440-G5 --- [nio-8010-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2019-04-05 08:36:15.080  INFO afro-HP-ProBook-440-G5 --- [nio-8010-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 13 ms
+2019-04-05 08:36:15.337  INFO afro-HP-ProBook-440-G5 --- [nio-8010-exec-1] c.a.w.c.c.SubscriberController           : REGISTRATION REQUEST RECEIVED.
+2019-04-05 08:36:15.341 DEBUG afro-HP-ProBook-440-G5 --- [nio-8010-exec-1] c.a.w.c.v.Validation                     :  - Validation process started.
+2019-04-05 08:36:15.341 DEBUG afro-HP-ProBook-440-G5 --- [nio-8010-exec-1] c.a.w.c.v.Validation                     :  - Entity Object is valid.
+2019-04-05 08:37:14.167  INFO afro-HP-ProBook-440-G5 --- [       Thread-6] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-05 08:37:14.170  INFO afro-HP-ProBook-440-G5 --- [       Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-04-05 08:37:14.178  INFO afro-HP-ProBook-440-G5 --- [       Thread-6] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2019-04-05 08:37:14.211  INFO afro-HP-ProBook-440-G5 --- [       Thread-6] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2019-04-05 08:37:14.557  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] c.a.w.c.ChezaSharesApplication           : Starting ChezaSharesApplication on afro-HP-ProBook-440-G5 with PID 9183 (/media/afro/TKL1/Telkom/Projects/cheza/cheza-shares/target/classes started by afro in /media/afro/TKL1/Telkom/Projects/cheza/cheza-shares)
+2019-04-05 08:37:14.557 DEBUG afro-HP-ProBook-440-G5 --- [  restartedMain] c.a.w.c.ChezaSharesApplication           : Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-04-05 08:37:14.557  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] c.a.w.c.ChezaSharesApplication           : No active profile set, falling back to default profiles: default
+2019-04-05 08:37:15.066  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-04-05 08:37:15.097  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30ms. Found 1 repository interfaces.
+2019-04-05 08:37:15.188  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$292159c7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-05 08:37:15.261  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8010 (http)
+2019-04-05 08:37:15.262  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8010"]
+2019-04-05 08:37:15.263  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2019-04-05 08:37:15.264  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-05 08:37:15.273  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.a.c.c.C.[.[.[/cheza_shares]            : Initializing Spring embedded WebApplicationContext
+2019-04-05 08:37:15.273  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 712 ms
+2019-04-05 08:37:15.341  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-2 - Starting...
+2019-04-05 08:37:15.368  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-2 - Start completed.
+2019-04-05 08:37:15.388  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-04-05 08:37:15.418  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-04-05 08:37:15.559  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2019-04-05 08:37:15.559  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.h.t.BasicTypeRegistry                  : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@4364f121
+2019-04-05 08:37:15.657  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-04-05 08:37:15.667  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-04-05 08:37:15.819  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-05 08:37:15.825  WARN afro-HP-ProBook-440-G5 --- [  restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-04-05 08:37:15.946  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8010"]
+2019-04-05 08:37:15.949  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8010 (http) with context path '/cheza_shares'
+2019-04-05 08:37:15.950  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] c.a.w.c.ChezaSharesApplication           : Started ChezaSharesApplication in 1.474 seconds (JVM running for 261.155)
+2019-04-05 08:37:15.954  INFO afro-HP-ProBook-440-G5 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-04-05 08:39:29.176  INFO afro-HP-ProBook-440-G5 --- [      Thread-17] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-05 08:39:29.177  INFO afro-HP-ProBook-440-G5 --- [      Thread-17] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-04-05 08:39:29.178  INFO afro-HP-ProBook-440-G5 --- [      Thread-17] c.z.h.HikariDataSource                   : HikariPool-2 - Shutdown initiated...
+2019-04-05 08:39:29.200  INFO afro-HP-ProBook-440-G5 --- [      Thread-17] c.z.h.HikariDataSource                   : HikariPool-2 - Shutdown completed.

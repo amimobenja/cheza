@@ -1,0 +1,22 @@
+## YAML Template.
+app:
+    sharedParams:
+        cdr:
+            header: TIMESTAMP|MSISDN|ACTION|RESULT|REQUEST|RESPONSE|ACTION_BY
+            path: /media/afro/TKL/Telkom/Projects/subscription-manager/cdrs/
+    oauth2:
+        params:
+            client:
+                id: devglan-client
+                secret: $2a$04$e/c1/RfsWuThaWFCrcCuJeoyvwCV0URN/6Pn9ZFlrtIWaU/vj/BfG
+            grant_type: password
+            authorization_code: authorization_code
+            refresh_token: refresh_token
+            implicit: implicit
+            scope:
+                read: read
+                write: write
+            trust: trust
+            token_validity:
+                access: 3600
+                refresh: 21600

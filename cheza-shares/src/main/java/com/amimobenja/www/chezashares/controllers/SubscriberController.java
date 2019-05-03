@@ -18,43 +18,43 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  *
  * @author afro
  */
 @RestController
+@RequestMapping("/subscribe")
 public class SubscriberController {
-    
+
     private static final Logger logger = LogManager.getLogger(SubscriberController.class);
 
     @Autowired
     private SubscriberService subService;
 
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
     public SubscriberController(SubscriberService subService) {
         this.subService = subService;
     }
 
-    @PostMapping(value = "/subscribe")
+    @PostMapping(value = "/client")
     private ResponseEntity<ResponseWrapper> subscribeSubscriber(@RequestBody Subscriber subscriber) {
         logger.info("REGISTRATION REQUEST RECEIVED.");
         Validation validate = new Validation();
-        ResponseWrapper response = validate.validateSubscriberRegistration(subscriber);
+        ResponseWrapper response = validate.validateSubscriberRegistration(subscriber, subService);
 
         if (validate.isIsValid()) {
-            try {
-                EncryptPassword encrypt = new EncryptPassword();
-                subscriber.setPassword(encrypt.encodePasswordMD5(subscriber.getPassword()));
-                Subscriber savedSubscriber = subService.saveSubscriber(subscriber);
-                response.setObject(savedSubscriber);
-            } catch (NoSuchAlgorithmException ex) {
-                logger.error(PASSWORD_ENCRYPTION_RESPONSE_ERROR);
-                response.setHttpStatus(HttpStatus.INTERNAL_SERVER_ERROR);
-                response.setResponseCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
-                response.setResponseMessage(PASSWORD_ENCRYPTION_RESPONSE_ERROR);                
-            }
+            subscriber.setPassword(bCryptPasswordEncoder.encode(subscriber.getPassword()));
+            String msidn = validate.formatMsisdn(subscriber.getMsisdn());
+            subscriber.setMsisdn(msidn);
+            Subscriber savedSubscriber = subService.saveSubscriber(subscriber);
+            response.setObject(savedSubscriber);
         }
 
         return new ResponseEntity<>(response, response.getHttpStatus());

@@ -10,6 +10,7 @@ import com.amimobenja.www.chezashares.entities.repositories.SubscriberRepository
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.amimobenja.www.chezashares.services.SubscriberService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
@@ -19,6 +20,7 @@ import com.amimobenja.www.chezashares.services.SubscriberService;
 @Service
 public class SubscriberImplementor implements SubscriberService {
     
+    @Autowired
     private SubscriberRepository subRepo;
 
     public SubscriberImplementor(SubscriberRepository subRepo) {
@@ -38,6 +40,12 @@ public class SubscriberImplementor implements SubscriberService {
     @Override
     public Subscriber searchSubscriberByMsisdnAndStatus(String msisdn, String status) {
         return subRepo.findByMsisdnAndStatus(msisdn, status);
+    }
+
+    @Override
+    public Subscriber loadSubscriberByMsisdn(String msisdn) {
+        System.out.println("We are here!!!");
+        return subRepo.findByMsisdn(msisdn);
     }
     
 }

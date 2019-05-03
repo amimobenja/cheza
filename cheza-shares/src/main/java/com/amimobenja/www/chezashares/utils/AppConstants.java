@@ -14,6 +14,7 @@ public class AppConstants {
     // Default server response messages
     public static final String DEFAULT_RESPONSE_MESSAGE = "Request has been accepted by the server.";
     public static final String BAD_PARAMS_RESPONSE_MESSAGE = "Unrecognized parameters passed.";
+    public static final String CONFLICT_RESPONSE_MESSAGE = "Msisdn is already subscribed.";
     public static final String OBJECT_CREATED_RESPONSE_MESSAGE = "Successfully created.";
     public static final String PASSWORD_ENCRYPTION_RESPONSE_ERROR = "Password encryption error.";
     

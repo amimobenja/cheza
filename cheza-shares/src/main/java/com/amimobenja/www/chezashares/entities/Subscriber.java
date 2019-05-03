@@ -36,6 +36,7 @@ public class Subscriber implements Serializable {
 
     public Subscriber() {
         this.subscriptionDate = new Date();
+        this.status = true;
     }
 
     public Subscriber(String msisdn, String password) {

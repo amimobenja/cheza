@@ -15,6 +15,8 @@ public interface SubscriberService {
     
     public Subscriber searchSubscriberByMsisdnAndPassword(String msisdn, String password);
     
+    public Subscriber loadSubscriberByMsisdn(String msisdn);
+    
     public Subscriber searchSubscriberByMsisdnAndStatus(String msisdn, String status);
     
     public Subscriber saveSubscriber(Subscriber subscriber);
